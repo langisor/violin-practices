@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import ViolinPracticeTracker from "./features/violin/components/practice-tracker"
+import ViolinPracticeTracker from "./features/violin/components/violin-practice-tracker"
 export function App() {
   return (
     <div className="flex min-h-svh p-6">

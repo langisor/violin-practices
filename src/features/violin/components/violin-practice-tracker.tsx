@@ -1,0 +1,156 @@
+import { useState, useEffect, useMemo } from "react";
+import type { PracticeLog, LogEntry } from "../types";
+import { EXERCISES } from "../lib/exercises-data";
+import { STAGES, STORAGE_KEY } from "../lib/stages-data";
+import { useMetronome } from "../hooks/use-metronome";
+import { useSessionTimer } from "../hooks/use-session-timer";
+import { StageProgress } from "./stage-progress";
+import { MetronomeBar } from "./metronome-bar";
+import { ExerciseRow } from "./exercise-row";
+
+export default function ViolinPracticeTracker() {
+  const [log, setLog] = useState<PracticeLog>({});
+  const [openId, setOpenId] = useState<number | null>(null);
+  const [activeStage, setActiveStage] = useState<string>("foundation");
+  const [loading, setLoading] = useState<boolean>(true);
+  const metronome = useMetronome();
+  const sessionTimer = useSessionTimer();
+  const storage = (window as any).storage ?? {
+    async get(key: string) {
+      return { value: window.localStorage.getItem(key) };
+    },
+    async set(key: string, value: string) {
+      window.localStorage.setItem(key, value);
+    },
+  };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const result = await storage.get(STORAGE_KEY);
+        if (result?.value) setLog(JSON.parse(result.value) as PracticeLog);
+      } catch {
+        // no existing data
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  const persist = async (next: PracticeLog) => {
+    setLog(next);
+    try {
+      await storage.set(STORAGE_KEY, JSON.stringify(next));
+    } catch {
+      // best-effort; state already updated locally
+    }
+  };
+
+  const handleSave = (n: number, data: LogEntry) => {
+    persist({ ...log, [n]: data });
+  };
+
+  const stageExercises = useMemo(() => {
+    const stage = STAGES.find((s) => s.id === activeStage)!;
+    return EXERCISES.filter(
+      (e) => e.n >= stage.range[0] && e.n <= stage.range[1]
+    );
+  }, [activeStage]);
+
+  const totalDone = Object.keys(log).length;
+  const currentStage = STAGES.find((s) => s.id === activeStage)!;
+
+  return (
+    <div className="min-h-screen bg-[#1B2420] font-sans">
+      <div className="max-w-md mx-auto px-4 py-8">
+        {/* Header */}
+        <div className="mb-7">
+          <p className="text-[11px] tracking-[0.18em] uppercase text-[#C9932B] font-mono mb-1">
+            G Major · One Octave (low)
+          </p>
+          <h1
+            className="text-[28px] leading-tight text-[#EDE7D8]"
+            style={{ fontFamily: "'Fraunces', serif" }}
+          >
+            Bowing Study Log
+          </h1>
+          <p className="text-[13px] text-[#8A9A93] mt-1.5">
+            35 bow-control exercises on a single scale · after M. Kravchuk
+          </p>
+          <div className="mt-4 flex items-center justify-between border-t border-[#2B3630] pt-4">
+            <span className="text-[12px] text-[#8A9A93]">Overall progress</span>
+            <StageProgress done={totalDone} total={EXERCISES.length} />
+          </div>
+        </div>
+
+        <MetronomeBar metronome={metronome} timer={sessionTimer} />
+
+        {/* Stage tabs */}
+        <div className="flex gap-1.5 overflow-x-auto pb-1 mb-1 -mx-1 px-1 scrollbar-none">
+          {STAGES.map((s) => {
+            const doneInStage = EXERCISES.filter(
+              (e) => e.n >= s.range[0] && e.n <= s.range[1] && log[e.n]
+            ).length;
+            const totalInStage = s.range[1] - s.range[0] + 1;
+            const active = activeStage === s.id;
+            return (
+              <button
+                key={s.id}
+                onClick={() => {
+                  setActiveStage(s.id);
+                  setOpenId(null);
+                }}
+                className={`shrink-0 text-left px-3 py-2 rounded-lg border transition-colors ${
+                  active
+                    ? "border-[#C9932B] bg-[#232D27]"
+                    : "border-[#2B3630] hover:border-[#5B6660]"
+                }`}
+              >
+                <div className="flex items-center gap-1.5">
+                  <span
+                    className={`text-[12px] font-medium ${
+                      active ? "text-[#EDE7D8]" : "text-[#8A9A93]"
+                    }`}
+                  >
+                    {s.label}
+                  </span>
+                  <span className="text-[10px] text-[#5B6660] font-mono tabular-nums">
+                    {doneInStage}/{totalInStage}
+                  </span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+        <p className="text-[11px] text-[#5B6660] mb-4 px-1">
+          {currentStage.blurb} · No. {currentStage.range[0]}–{currentStage.range[1]}
+        </p>
+
+        {/* Exercise list */}
+        <div className="bg-[#20281F]/40 border border-[#2B3630] rounded-xl px-3">
+          {loading ? (
+            <p className="text-center text-[#5B6660] text-sm py-8">
+              Loading log…
+            </p>
+          ) : (
+            stageExercises.map((ex) => (
+              <ExerciseRow
+                key={ex.n}
+                ex={ex}
+                entry={log[ex.n]}
+                open={openId === ex.n}
+                onToggle={() => setOpenId(openId === ex.n ? null : ex.n)}
+                onSave={handleSave}
+                metronome={metronome}
+              />
+            ))
+          )}
+        </div>
+
+        <p className="text-[11px] text-[#5B6660] text-center mt-6">
+          Your log is saved on this device and updates as you practice.
+        </p>
+      </div>
+    </div>
+  );
+}
