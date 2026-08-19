@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import ViolinPracticeTracker from "./features/violin/components/violin-practice-tracker"
 export function App() {
   return (
