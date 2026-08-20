@@ -1,5 +1,11 @@
 import type { Dispatch, SetStateAction } from "react";
 
+export interface Scale {
+  id: string;
+  label: string;
+  description: string;
+}
+
 export interface Exercise {
   n: number;
   title: string;
@@ -29,7 +35,9 @@ export interface LogEntry {
   updatedAt: string;
 }
 
-export type PracticeLog = Record<number, LogEntry>;
+// Keyed by a composite "scaleId:exerciseNumber" string so the same
+// exercise set can be logged independently per scale.
+export type PracticeLog = Record<string, LogEntry>;
 
 export interface Metronome {
   bpm: number;

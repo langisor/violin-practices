@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import type { PracticeLog, LogEntry } from "../types";
 import { EXERCISES } from "../lib/exercises-data";
 import { STAGES, STORAGE_KEY } from "../lib/stages-data";
+import { SCALES, logKey } from "../lib/scales-data";
 import { useMetronome } from "../hooks/use-metronome";
 import { useSessionTimer } from "../hooks/use-session-timer";
 import { StageProgress } from "./stage-progress";
@@ -11,23 +12,16 @@ import { ExerciseRow } from "./exercise-row";
 export default function ViolinPracticeTracker() {
   const [log, setLog] = useState<PracticeLog>({});
   const [openId, setOpenId] = useState<number | null>(null);
+  const [activeScale, setActiveScale] = useState<string>(SCALES[0].id);
   const [activeStage, setActiveStage] = useState<string>("foundation");
   const [loading, setLoading] = useState<boolean>(true);
   const metronome = useMetronome();
   const sessionTimer = useSessionTimer();
-  const storage = (window as any).storage ?? {
-    async get(key: string) {
-      return { value: window.localStorage.getItem(key) };
-    },
-    async set(key: string, value: string) {
-      window.localStorage.setItem(key, value);
-    },
-  };
 
   useEffect(() => {
     (async () => {
       try {
-        const result = await storage.get(STORAGE_KEY);
+        const result = await window.storage.get(STORAGE_KEY);
         if (result?.value) setLog(JSON.parse(result.value) as PracticeLog);
       } catch {
         // no existing data
@@ -40,14 +34,14 @@ export default function ViolinPracticeTracker() {
   const persist = async (next: PracticeLog) => {
     setLog(next);
     try {
-      await storage.set(STORAGE_KEY, JSON.stringify(next));
+      await window.storage.set(STORAGE_KEY, JSON.stringify(next));
     } catch {
       // best-effort; state already updated locally
     }
   };
 
   const handleSave = (n: number, data: LogEntry) => {
-    persist({ ...log, [n]: data });
+    persist({ ...log, [logKey(activeScale, n)]: data });
   };
 
   const stageExercises = useMemo(() => {
@@ -57,8 +51,13 @@ export default function ViolinPracticeTracker() {
     );
   }, [activeStage]);
 
-  const totalDone = Object.keys(log).length;
+  const doneInScale = useMemo(
+    () => EXERCISES.filter((e) => log[logKey(activeScale, e.n)]).length,
+    [log, activeScale]
+  );
+
   const currentStage = STAGES.find((s) => s.id === activeStage)!;
+  const currentScale = SCALES.find((s) => s.id === activeScale)!;
 
   return (
     <div className="min-h-screen bg-[#1B2420] font-sans">
@@ -66,7 +65,7 @@ export default function ViolinPracticeTracker() {
         {/* Header */}
         <div className="mb-7">
           <p className="text-[11px] tracking-[0.18em] uppercase text-[#C9932B] font-mono mb-1">
-            G Major · One Octave (low)
+            {currentScale.label} · {currentScale.description}
           </p>
           <h1
             className="text-[28px] leading-tight text-[#EDE7D8]"
@@ -77,9 +76,35 @@ export default function ViolinPracticeTracker() {
           <p className="text-[13px] text-[#8A9A93] mt-1.5">
             35 bow-control exercises on a single scale · after M. Kravchuk
           </p>
+
+          {/* Scale selector */}
+          <div className="flex gap-1.5 mt-4">
+            {SCALES.map((s) => {
+              const active = activeScale === s.id;
+              return (
+                <button
+                  key={s.id}
+                  onClick={() => {
+                    setActiveScale(s.id);
+                    setOpenId(null);
+                  }}
+                  className={`flex-1 text-center py-1.5 rounded-md text-[12px] font-medium border transition-colors ${
+                    active
+                      ? "border-[#C9932B] bg-[#232D27] text-[#EDE7D8]"
+                      : "border-[#2B3630] text-[#8A9A93] hover:border-[#5B6660]"
+                  }`}
+                >
+                  {s.label}
+                </button>
+              );
+            })}
+          </div>
+
           <div className="mt-4 flex items-center justify-between border-t border-[#2B3630] pt-4">
-            <span className="text-[12px] text-[#8A9A93]">Overall progress</span>
-            <StageProgress done={totalDone} total={EXERCISES.length} />
+            <span className="text-[12px] text-[#8A9A93]">
+              {currentScale.label} progress
+            </span>
+            <StageProgress done={doneInScale} total={EXERCISES.length} />
           </div>
         </div>
 
@@ -89,7 +114,10 @@ export default function ViolinPracticeTracker() {
         <div className="flex gap-1.5 overflow-x-auto pb-1 mb-1 -mx-1 px-1 scrollbar-none">
           {STAGES.map((s) => {
             const doneInStage = EXERCISES.filter(
-              (e) => e.n >= s.range[0] && e.n <= s.range[1] && log[e.n]
+              (e) =>
+                e.n >= s.range[0] &&
+                e.n <= s.range[1] &&
+                log[logKey(activeScale, e.n)]
             ).length;
             const totalInStage = s.range[1] - s.range[0] + 1;
             const active = activeStage === s.id;
@@ -135,9 +163,9 @@ export default function ViolinPracticeTracker() {
           ) : (
             stageExercises.map((ex) => (
               <ExerciseRow
-                key={ex.n}
+                key={`${activeScale}-${ex.n}`}
                 ex={ex}
-                entry={log[ex.n]}
+                entry={log[logKey(activeScale, ex.n)]}
                 open={openId === ex.n}
                 onToggle={() => setOpenId(openId === ex.n ? null : ex.n)}
                 onSave={handleSave}

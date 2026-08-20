@@ -15,4 +15,4 @@ export const RATINGS: Rating[] = [
   { v: 4, label: "Clean" },
 ];
 
-export const STORAGE_KEY = "gmajor_bowing_log_v1";
+export const STORAGE_KEY = "violin_bowing_log_v2";
