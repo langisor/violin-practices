@@ -21,8 +21,8 @@ export default function ViolinPracticeTracker() {
   useEffect(() => {
     (async () => {
       try {
-        const result = await window.storage.get(STORAGE_KEY);
-        if (result?.value) setLog(JSON.parse(result.value) as PracticeLog);
+        const value = window.localStorage.getItem(STORAGE_KEY);
+        if (value) setLog(JSON.parse(value) as PracticeLog);
       } catch {
         // no existing data
       } finally {
@@ -34,7 +34,7 @@ export default function ViolinPracticeTracker() {
   const persist = async (next: PracticeLog) => {
     setLog(next);
     try {
-      await window.storage.set(STORAGE_KEY, JSON.stringify(next));
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
     } catch {
       // best-effort; state already updated locally
     }
