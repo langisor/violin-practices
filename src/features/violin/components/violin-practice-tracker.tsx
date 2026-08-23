@@ -1,11 +1,11 @@
 import { useState, useEffect, useMemo } from "react";
 import type { PracticeLog, LogEntry } from "../types";
-import { EXERCISES } from "../lib/exercises-data";
+import { EXERCISE_SETS } from "../lib/exercise-sets";
 import { STAGES, STORAGE_KEY } from "../lib/stages-data";
 import { SCALES, logKey } from "../lib/scales-data";
 import { useMetronome } from "../hooks/use-metronome";
 import { useSessionTimer } from "../hooks/use-session-timer";
-import { StageProgress } from "./stage-progress";
+import { StageProgress } from "../components/stage-progress";
 import { MetronomeBar } from "./metronome-bar";
 import { ExerciseRow } from "./exercise-row";
 
@@ -21,8 +21,8 @@ export default function ViolinPracticeTracker() {
   useEffect(() => {
     (async () => {
       try {
-        const value = window.localStorage.getItem(STORAGE_KEY);
-        if (value) setLog(JSON.parse(value) as PracticeLog);
+        const result = await window.storage.get(STORAGE_KEY);
+        if (result?.value) setLog(JSON.parse(result.value) as PracticeLog);
       } catch {
         // no existing data
       } finally {
@@ -34,7 +34,7 @@ export default function ViolinPracticeTracker() {
   const persist = async (next: PracticeLog) => {
     setLog(next);
     try {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+      await window.storage.set(STORAGE_KEY, JSON.stringify(next));
     } catch {
       // best-effort; state already updated locally
     }
@@ -44,20 +44,22 @@ export default function ViolinPracticeTracker() {
     persist({ ...log, [logKey(activeScale, n)]: data });
   };
 
+  const currentScale = SCALES.find((s) => s.id === activeScale)!;
+  const activeExercises = EXERCISE_SETS[currentScale.exerciseSetId];
+
   const stageExercises = useMemo(() => {
     const stage = STAGES.find((s) => s.id === activeStage)!;
-    return EXERCISES.filter(
+    return activeExercises.filter(
       (e) => e.n >= stage.range[0] && e.n <= stage.range[1]
     );
-  }, [activeStage]);
+  }, [activeStage, activeExercises]);
 
   const doneInScale = useMemo(
-    () => EXERCISES.filter((e) => log[logKey(activeScale, e.n)]).length,
-    [log, activeScale]
+    () => activeExercises.filter((e) => log[logKey(activeScale, e.n)]).length,
+    [log, activeScale, activeExercises]
   );
 
   const currentStage = STAGES.find((s) => s.id === activeStage)!;
-  const currentScale = SCALES.find((s) => s.id === activeScale)!;
 
   return (
     <div className="min-h-screen bg-[#1B2420] font-sans">
@@ -78,7 +80,7 @@ export default function ViolinPracticeTracker() {
           </p>
 
           {/* Scale selector */}
-          <div className="flex gap-1.5 mt-4">
+          <div className="flex gap-1.5 mt-4 flex-wrap">
             {SCALES.map((s) => {
               const active = activeScale === s.id;
               return (
@@ -86,9 +88,10 @@ export default function ViolinPracticeTracker() {
                   key={s.id}
                   onClick={() => {
                     setActiveScale(s.id);
+                    setActiveStage("foundation");
                     setOpenId(null);
                   }}
-                  className={`flex-1 text-center py-1.5 rounded-md text-[12px] font-medium border transition-colors ${
+                  className={`flex-1 min-w-[70px] text-center py-1.5 rounded-md text-[12px] font-medium border transition-colors ${
                     active
                       ? "border-[#C9932B] bg-[#232D27] text-[#EDE7D8]"
                       : "border-[#2B3630] text-[#8A9A93] hover:border-[#5B6660]"
@@ -104,7 +107,7 @@ export default function ViolinPracticeTracker() {
             <span className="text-[12px] text-[#8A9A93]">
               {currentScale.label} progress
             </span>
-            <StageProgress done={doneInScale} total={EXERCISES.length} />
+            <StageProgress done={doneInScale} total={activeExercises.length} />
           </div>
         </div>
 
@@ -113,7 +116,7 @@ export default function ViolinPracticeTracker() {
         {/* Stage tabs */}
         <div className="flex gap-1.5 overflow-x-auto pb-1 mb-1 -mx-1 px-1 scrollbar-none">
           {STAGES.map((s) => {
-            const doneInStage = EXERCISES.filter(
+            const doneInStage = activeExercises.filter(
               (e) =>
                 e.n >= s.range[0] &&
                 e.n <= s.range[1] &&

@@ -4,6 +4,7 @@ export interface Scale {
   id: string;
   label: string;
   description: string;
+  exerciseSetId: string;
 }
 
 export interface Exercise {
