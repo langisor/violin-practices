@@ -92,7 +92,7 @@ export default function ViolinPracticeTracker() {
                     setActiveStage("foundation");
                     setOpenId(null);
                   }}
-                  className={`flex-1 min-w-17.5 text-center py-1.5 rounded-md text-[12px] font-medium border transition-colors ${
+                  className={`flex-1 min-w-20 text-center py-1.5 rounded-md text-[12px] font-medium border transition-colors ${
                     active
                       ? "border-[#C9932B] bg-[#232D27] text-[#EDE7D8]"
                       : "border-[#2B3630] text-[#8A9A93] hover:border-[#5B6660]"
@@ -121,7 +121,7 @@ export default function ViolinPracticeTracker() {
         <MetronomeBar metronome={metronome} timer={sessionTimer} />
 
         {/* Stage tabs */}
-        <div className="flex gap-1.5 overflow-x-auto pb-1 mb-1 -mx-1 px-1 scrollbar-none">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1.5 overflow-x-auto pb-1 mb-1 -mx-1 px-1">
           {STAGES.map((s) => {
             const doneInStage = activeExercises.filter(
               (e) =>
@@ -138,7 +138,7 @@ export default function ViolinPracticeTracker() {
                   setActiveStage(s.id);
                   setOpenId(null);
                 }}
-                className={`shrink-0 text-left px-3 py-2 rounded-lg border transition-colors ${
+                className={`shrink-0 text-left px-1 py-2 rounded-lg border transition-colors ${
                   active
                     ? "border-[#C9932B] bg-[#232D27]"
                     : "border-[#2B3630] hover:border-[#5B6660]"
