@@ -10,7 +10,10 @@ interface ScaleInfoCardProps {
 export function ScaleInfoCard({ scaleId, label, notes }: ScaleInfoCardProps) {
   const pdfFilename = getPdfFilename(scaleId);
   const pdfUrl = `/downloads/${pdfFilename}`;
-
+  
+  // To disable declared but its value is never read
+  void label;
+  
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = pdfUrl;
