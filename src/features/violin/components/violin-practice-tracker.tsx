@@ -8,6 +8,7 @@ import { useSessionTimer } from "../hooks/use-session-timer";
 import { StageProgress } from "../components/stage-progress";
 import { MetronomeBar } from "./metronome-bar";
 import { ExerciseRow } from "./exercise-row";
+import { ScaleInfoCard } from "./scale-info-card";
 
 export default function ViolinPracticeTracker() {
   const [log, setLog] = useState<PracticeLog>({});
@@ -91,7 +92,7 @@ export default function ViolinPracticeTracker() {
                     setActiveStage("foundation");
                     setOpenId(null);
                   }}
-                  className={`flex-1 min-w-[70px] text-center py-1.5 rounded-md text-[12px] font-medium border transition-colors ${
+                  className={`flex-1 min-w-17.5 text-center py-1.5 rounded-md text-[12px] font-medium border transition-colors ${
                     active
                       ? "border-[#C9932B] bg-[#232D27] text-[#EDE7D8]"
                       : "border-[#2B3630] text-[#8A9A93] hover:border-[#5B6660]"
@@ -110,6 +111,12 @@ export default function ViolinPracticeTracker() {
             <StageProgress done={doneInScale} total={activeExercises.length} />
           </div>
         </div>
+
+        <ScaleInfoCard 
+          scaleId={currentScale.id}
+          label={currentScale.label}
+          notes={currentScale.notes}
+        />
 
         <MetronomeBar metronome={metronome} timer={sessionTimer} />
 

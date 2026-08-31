@@ -9,6 +9,8 @@ export const EXERCISES: Exercise[] = [
       "Draw the entire bow (frog to tip) over each half note — think slow and full, not fast.",
       "Keep speed, pressure, and contact point identical from start to finish of the stroke.",
       "Lift and reset to the frog between notes rather than alternating direction.",
+      "Focus on maintaining a consistent tone quality throughout the entire bow length.",
+      "Practice in front of a mirror to check for unnecessary tension in your shoulders and arms.",
     ],
   },
   {
@@ -19,6 +21,8 @@ export const EXERCISES: Exercise[] = [
       "Use only half the bow's length per note — pick one zone (e.g. lower half) and stay there.",
       "A shorter stroke needs slightly more focused arm control to avoid sounding rushed or thin.",
       "Keep the same tone quality you'd use on a full bow, just over less distance.",
+      "Maintain consistent bow speed within your chosen zone — don't rush just because the stroke is shorter.",
+      "Practice this in different bow zones: lower half, middle, and upper half to develop control everywhere.",
     ],
   },
   {
@@ -29,6 +33,8 @@ export const EXERCISES: Exercise[] = [
       "Pattern: down (long, full bow) → up (half) → down (half), then repeat.",
       "The long stroke must move faster to cover full bow length in the same time value as a half stroke.",
       "Plan bow placement ahead — know where you'll be on the bow before you start each note.",
+      "The transition from long to half strokes is the critical moment — keep the rhythm steady.",
+      "Use a metronome to ensure the half notes and quarter notes maintain their proper relationship.",
     ],
   },
   {
@@ -39,6 +45,8 @@ export const EXERCISES: Exercise[] = [
       "Pattern: down (half) → up (half) → down (long, full bow), then repeat.",
       "Mirror of No. 3 — practice both so you're comfortable stretching the bow speed either direction.",
       "Keep the two half strokes matched in tone before the long stroke arrives.",
+      "The long stroke here feels like a release after the quicker half strokes — let it flow naturally.",
+      "Ensure the transition from half to long doesn't create an accent or break in the musical line.",
     ],
   },
   {
@@ -49,6 +57,8 @@ export const EXERCISES: Exercise[] = [
       "Rhythm varies note to note, so your bow-length budget changes with it — check note values before playing.",
       "Stay in the same general bow zone throughout unless the rhythm forces a shift.",
       "Prioritize clean string crossings over speed.",
+      "Analyze the rhythm pattern first: identify which notes get more bow and which get less.",
+      "This exercise trains your ability to adapt bow length dynamically while maintaining tone quality.",
     ],
   },
   {
@@ -59,6 +69,8 @@ export const EXERCISES: Exercise[] = [
       "One continuous bow per whole note — the slowest, most demanding tone-control exercise in the set.",
       "Watch for a natural urge to speed up near the tip, where the bow feels lighter — resist it.",
       "Keep pressure and contact point constant; use your ear to catch any thinning or scratchiness.",
+      "This is the ultimate test of your tone control — if you can do this well, everything else becomes easier.",
+      "Practice at different dynamic levels: piano, mezzo-piano, and mezzo-forte to develop control across volumes.",
     ],
   },
   {
@@ -69,6 +81,8 @@ export const EXERCISES: Exercise[] = [
       "Alternate down-up-down-up, using the entire bow on every quarter note.",
       "Bow speed increases noticeably compared to No. 1 — the same distance now happens faster.",
       "Match the tone of your up-bow to your down-bow; up-bows tend to sound thinner if you're not careful.",
+      "This is a coordination challenge: you must move faster while maintaining control and tone.",
+      "Focus on smooth bow changes at the frog and tip — no bumps or hesitations.",
     ],
   },
   {
@@ -79,6 +93,8 @@ export const EXERCISES: Exercise[] = [
       "Several strokes in a row go the same direction, so you lift and reset the bow between them.",
       "The retake itself should be silent — no bump, scratch, or accent when the bow lands back on the string.",
       "Practice the retake motion slowly in the air before adding it back to the string.",
+      "Keep your right hand relaxed during the retake — tension will make the landing audible.",
+      "This skill is essential for orchestral playing where you often need to restart in the same direction.",
     ],
   },
   {
@@ -89,6 +105,8 @@ export const EXERCISES: Exercise[] = [
       "Every note is a full-bow down-bow — draw frog to tip, lift, reset at the frog, repeat.",
       "Isolating down-bow retakes builds control you'll need constantly in real playing.",
       "Keep the retake fast and quiet so it doesn't interrupt the rhythmic pulse.",
+      "Down-bows are naturally stronger due to arm weight — use this to your advantage for confident tone.",
+      "Practice landing the bow silently on the string — this is a key professional skill.",
     ],
   },
   {
@@ -99,6 +117,8 @@ export const EXERCISES: Exercise[] = [
       "Every note is a full-bow up-bow — draw tip to frog, lift, reset at the tip, repeat.",
       "Up-bow retakes are usually the harder of the pair since there's less natural arm weight — go slowly.",
       "Aim for the same tone strength as the down-bow-only version in No. 9.",
+      "You may need to add slight pressure to compensate for the lack of natural arm weight on up-bows.",
+      "This exercise develops the independence of your bow arm from gravity.",
     ],
   },
   {
@@ -109,6 +129,8 @@ export const EXERCISES: Exercise[] = [
       "Same up-bow-only isolation as No. 10, but now grouped into phrases (marked by the commas).",
       "Within a phrase, plan your retakes so they don't disturb the musical line.",
       "Breathe or pause naturally at the phrase break, not mid-phrase.",
+      "Treat each phrase as a complete musical thought, even with the technical challenge of up-bow retakes.",
+      "The comma marks where you can take a breath — use it to reset your posture and focus.",
     ],
   },
   {
@@ -118,6 +140,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Down-bow counterpart to No. 11 — same phrase-grouping challenge, down-bow only.",
       "Focus on keeping tone identical across every retake in the phrase, not just the first one.",
+      "Use the phrase breaks to check your posture and release any accumulated tension.",
+      "Down-bows are easier for tone production, so focus on the musical shaping within each phrase.",
+      "Compare this with No. 11 to understand the differences between down-bow and up-bow phrasing.",
     ],
   },
   {
@@ -127,6 +152,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "A longer down-bow-only passage — this is a consistency test after isolating the skill in 9 and 12.",
       "Check: does your 10th retake sound as clean as your 1st? If not, slow the tempo and rebuild evenness.",
+      "This tests both technical consistency and mental focus over a longer passage.",
+      "If you feel tension building, stop earlier and work on relaxation before attempting the full length.",
+      "The goal is to maintain the same quality from the first note to the last.",
     ],
   },
   {
@@ -137,6 +165,8 @@ export const EXERCISES: Exercise[] = [
       "Fast, even eighth notes using a small portion of the bow — control comes from the wrist and fingers, not the whole arm.",
       "Keep the bow close to the string between strokes rather than lifting.",
       "Even spacing matters more than speed — a metronome is very useful here.",
+      "Think of the motion as coming from your fingers, like a subtle vibration rather than big arm movements.",
+      "Start slowly and only increase tempo when you can maintain perfect evenness.",
     ],
   },
   {
@@ -147,6 +177,8 @@ export const EXERCISES: Exercise[] = [
       "Four quick short strokes lead into one sustained long stroke — down-up-down-up, then a slower resolving stroke.",
       "Don't let the short strokes rush ahead of tempo; they should feel light, not frantic.",
       "The long stroke should feel like a release after the busier short strokes.",
+      "The transition from short to long is a moment of resolution — let it breathe naturally.",
+      "This pattern appears frequently in real music, especially in Baroque and Classical repertoire.",
     ],
   },
   {
@@ -156,6 +188,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Two short strokes, then a half-length stroke — practice the transition between the two bow speeds smoothly.",
       "Keep the short strokes paired rhythmically even (not one longer than the other).",
+      "The half stroke should feel like a natural conclusion to the short-stroke pair.",
+      "Practice this slowly first to internalize the rhythm, then gradually increase tempo.",
+      "This pattern helps develop flexibility in switching between different bow speeds.",
     ],
   },
   {
@@ -165,6 +200,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Reverse of No. 16 — a half stroke first, then two matched short strokes.",
       "The half stroke sets your bow position for the string; don't let the short strokes drift off the intended contact point.",
+      "Starting with a half stroke gives you more time to prepare for the quick short strokes.",
+      "Use the half stroke to establish good tone and contact point before the faster section.",
+      "This teaches you to transition from slower to faster bowing smoothly.",
     ],
   },
   {
@@ -174,6 +212,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Same core pattern as No. 16, with a different phrase grouping in the notation — read the slur/comma marks carefully.",
       "Use this as a check that the pattern is secure regardless of how it's grouped.",
+      "Different groupings test your ability to maintain the same technical pattern in various musical contexts.",
+      "Pay attention to how the grouping affects your musical phrasing and breathing.",
+      "This variation ensures you're not relying on memorized fingerings but truly understand the pattern.",
     ],
   },
   {
@@ -183,6 +224,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Same short×4-into-long idea as No. 15, now starting up-bow — check the bow marks before you start.",
       "Keep the short strokes light and close to the string.",
+      "Starting up-bow changes the feeling of the pattern — up-bows naturally have less weight.",
+      "You may need to adjust pressure slightly to maintain the same tone quality as the down-bow version.",
+      "This ensures you can execute the pattern equally well in both bow directions.",
     ],
   },
   {
@@ -192,6 +236,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Now the long stroke comes first, followed by four short strokes — the reverse order from No. 15/19.",
       "Resist rushing into the short strokes right after the long one; keep the pulse steady across the transition.",
+      "The long stroke sets up the phrase; the short strokes provide energy and forward motion.",
+      "Think of the long stroke as preparation and the short strokes as action.",
+      "This pattern teaches you to switch from sustained to articulated playing seamlessly.",
     ],
   },
   {
@@ -201,6 +248,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Long, then two short, then long again — a symmetrical shape that tests both bow-speed extremes in one phrase.",
       "Think of the pattern as slow-fast-fast-slow, keeping tone consistent through every speed change.",
+      "The symmetry creates a satisfying musical shape — emphasize the return to the long stroke.",
+      "This pattern appears in many concertos and sonatas, especially in virtuosic passages.",
+      "Focus on maintaining contact point consistency through all the speed changes.",
     ],
   },
   {
@@ -210,6 +260,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Same long-short-short-long shape as No. 21, reinforcing the pattern with new bow markings.",
       "Use this repetition to make the speed changes feel automatic rather than planned.",
+      "Different bow markings mean you'll need to adjust your bow distribution and timing.",
+      "The repetition helps build muscle memory for this important pattern.",
+      "Compare this with No. 21 to understand how bow direction affects the same musical pattern.",
     ],
   },
   {
@@ -219,6 +272,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Steady alternating down-up full-bow strokes across the whole octave scale.",
       "By this point your down/up tone should already sound matched — use this as a fluency check.",
+      "This is a return to simpler bowing after the complex patterns of the previous exercises.",
+      "Use it as a warm-down or to reset your technique before moving to more advanced material.",
+      "Focus on smooth bow changes and consistent tone across the entire octave.",
     ],
   },
   {
@@ -228,6 +284,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Combines the short-group and long-stroke skills from earlier exercises into one flowing phrase.",
       "Keep the short notes even and the long note fully sustained — no fading at the end.",
+      "This is a culmination of the rhythmic grouping exercises — all the skills come together here.",
+      "The long note at the end should feel like a resolution after the activity of the short notes.",
+      "Practice this at different tempos to ensure control at various speeds.",
     ],
   },
   {
@@ -238,6 +297,8 @@ export const EXERCISES: Exercise[] = [
       "Staccato dots mean each note is stopped cleanly on the string before the next one starts — not bounced off the string.",
       "Use a small, controlled pinch of pressure and a brief stop between notes within the same bow direction.",
       "Keep the stops even; the goal is crisp articulation, not accents.",
+      "Think of each note as having a tiny space between it and the next — that's the staccato quality.",
+      "This is different from spiccato (bowed staccato) — the bow stays on the string throughout.",
     ],
   },
   {
@@ -247,6 +308,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Alternates between detached staccato notes and smoothly connected legato notes in the same phrase.",
       "Exaggerate the contrast at first — make staccato very crisp and legato very smooth — then even it out.",
+      "The transition between staccato and legato should be clean and deliberate.",
+      "This contrast is essential for expressive playing — most music uses both articulation types.",
+      "Focus on making the change of articulation feel musical, not just technical.",
     ],
   },
   {
@@ -256,6 +320,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Same staccato articulation as No. 25, now grouped on up-bow strokes.",
       "Up-bow staccato is typically harder to control — go slower here than you would on down-bow staccato.",
+      "You may need slightly more pressure on up-bows to maintain the same crisp articulation.",
+      "Pay extra attention to keeping the stops even — up-bows tend to rush.",
+      "This asymmetry between up-bow and down-bow staccato is normal; just be aware of it.",
     ],
   },
   {
@@ -265,6 +332,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Combines up-bow staccato control from No. 27 with the staccato-to-legato contrast from No. 26.",
       "Focus on a clean transition point where staccato ends and legato begins.",
+      "The up-bow version adds the challenge of maintaining control through the articulation change.",
+      "Think of the legato section as a release from the tension of the staccato.",
+      "This combination is particularly common in orchestral music and concertos.",
     ],
   },
   {
@@ -274,6 +344,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "A straightforward alternating full-bow scale — use it as a relaxed check-in after the staccato work.",
       "Let the arm feel loose again after the more controlled staccato strokes.",
+      "This serves as a palate cleanser between different technical challenges.",
+      "Return to basics: focus on tone, even bow speed, and smooth bow changes.",
+      "If tension built up during staccato work, this exercise helps release it.",
     ],
   },
   {
@@ -283,6 +356,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Continues the alternating full-bow pattern — treat this as a fluency and stamina check.",
       "Watch that tone doesn't drift as you tire through repetition.",
+      "This is about consistency over duration — can you maintain quality through the entire scale?",
+      "Use this to identify any technical issues that emerge when you're no longer fresh.",
+      "If you notice deterioration, stop and address the specific problem before continuing.",
     ],
   },
   {
@@ -292,6 +368,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "A longer phrase with grouped bowing — plan bow distribution ahead so you don't run out of bow mid-phrase.",
       "Break the phrase into smaller chunks mentally if it feels long to sustain evenly.",
+      "This requires thinking ahead — look at the whole phrase before you start playing.",
+      "The challenge is maintaining both technical control and musical continuity over a longer span.",
+      "Practice this slowly first to understand the bow distribution, then increase tempo.",
     ],
   },
   {
@@ -301,6 +380,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Dotted rhythms mean uneven note lengths — give the long note its full value and keep the short note crisp.",
       "Practice the rhythm alone (clapping or tapping) before adding the bow if the dotted feel is unclear.",
+      "The long note gets three times the value of the short note in a dotted pattern.",
+      "This rhythm creates a forward momentum and is common in many musical styles.",
+      "Be careful not to rush the short notes — they should be precise, not hurried.",
     ],
   },
   {
@@ -310,6 +392,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "Fast, even short strokes alternating direction — similar to No. 14 but now covering both bow directions equally.",
       "Keep the bow near the string and let the motion stay small and controlled, not tense.",
+      "Alternating directions adds the challenge of maintaining quality through bow changes.",
+      "The bow change should be almost imperceptible — the notes should flow as one continuous stream.",
+      "This is excellent preparation for fast passagework in real repertoire.",
     ],
   },
   {
@@ -320,6 +405,8 @@ export const EXERCISES: Exercise[] = [
       "Each down-bow gets a marcato accent — a strong, quick attack at the start of the stroke that then relaxes.",
       "Use extra bow speed and a brief pressure release right at the start of the stroke, not throughout.",
       "Keep the up-bows even and unaccented for contrast.",
+      "The accent should come from speed and pressure, not from brute force.",
+      "This contrast between accented and unaccented strokes is crucial for dynamic playing.",
     ],
   },
   {
@@ -329,6 +416,9 @@ export const EXERCISES: Exercise[] = [
     guide: [
       "A relaxed closing pattern — use it to cool down and confirm tone consistency across the whole octave.",
       "Play it as a final check: even tone, even bow distribution, no tension in the arm or wrist.",
+      "This should feel like a return to basics after all the technical challenges.",
+      "Use it to assess your overall progress and identify any remaining issues.",
+      "End your practice session with this exercise to leave with a sense of accomplishment and good tone.",
     ],
   },
 ];

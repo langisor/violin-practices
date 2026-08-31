@@ -12,6 +12,8 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
       "Same long-bow idea as the one-octave version, but now the scale crosses all four strings twice — plan string crossings ahead of time.",
       "Keep bow speed constant even as you cross strings; a common issue is speeding up right at the crossing.",
       "If the top of the scale reaches a stretch on the E string, don't let tension creep into the bow arm as you reach it.",
+      "The longer scale line means you need to plan your bow distribution more carefully than in the one-octave version.",
+      "Focus on maintaining the same contact point throughout the entire two-octave range.",
     ],
   },
   {
@@ -21,6 +23,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Use half the bow per note, same zone throughout — the extra string crossings make consistent bow placement more demanding here than in the one-octave version.",
       "Keep the string crossing itself small and quiet; don't let it turn into an accent.",
+      "With more string crossings, pay extra attention to keeping your right hand relaxed.",
+      "The challenge is maintaining tone quality while changing strings more frequently.",
+      "Practice this slowly at first to understand the crossing points, then increase tempo.",
     ],
   },
   {
@@ -30,6 +35,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Pattern: down (long, full bow) → up (half) → down (half), repeating up and back down across both octaves.",
       "Because the scale line is longer, plan two or three string-crossing points in advance rather than reacting to them as they arrive.",
+      "The transition from long to half strokes needs to be smooth even across string changes.",
+      "Use a metronome to ensure the rhythm remains steady despite the technical challenges.",
+      "This pattern tests your ability to plan ahead over a longer musical line.",
     ],
   },
   {
@@ -39,6 +47,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Mirror of No. 3 — half, half, then a full-bow long stroke.",
       "Keep the two half strokes evenly matched before the long stroke arrives, even across a string change.",
+      "The long stroke should feel like a release after the quicker half strokes.",
+      "This pattern requires you to maintain consistency across different bow speeds and string crossings.",
+      "Focus on the musical shape — the long stroke provides resolution.",
     ],
   },
   {
@@ -48,6 +59,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Rhythm shifts note to note — check note values before playing so your bow budget matches the written rhythm.",
       "Stay in the same general bow zone through the string crossings unless the rhythm forces a shift.",
+      "The mixed rhythm combined with more string crossings makes this a significant coordination challenge.",
+      "Analyze the rhythm pattern first to understand where you'll need more or less bow.",
+      "This exercise develops flexibility in adapting bow length to musical demands.",
     ],
   },
   {
@@ -58,6 +72,8 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
       "One continuous bow per whole note, now over a longer scale — the most demanding tone drill in the set.",
       "Watch your bow distribution across string crossings; a whole note that starts on one string and needs to land cleanly after a crossing takes extra planning.",
       "Resist speeding up near the tip — the pull is stronger here since whole notes leave more time to drift.",
+      "This is the ultimate test of your tone control across the full range of the instrument.",
+      "Practice at different dynamic levels to develop complete control over the two-octave range.",
     ],
   },
   {
@@ -68,6 +84,8 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
       "Full-bow alternating strokes carry the scale up through both octaves and back down.",
       "Keep tone matched between down- and up-bow, and pay extra attention right at each string crossing.",
       "Because the scale is longer, tempo drift is easier to miss — check yourself against a metronome.",
+      "The extended range tests your ability to maintain consistency across the instrument's full compass.",
+      "Focus on smooth bow changes and even tone from the lowest G to the highest G.",
     ],
   },
   {
@@ -76,6 +94,10 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     note: "Continues the alternating full-bow pattern from No. 7, up-bow emphasis.",
     guide: [
       "Same technique as No. 7, with the bowing shifted so up-bows carry more of the phrase — make sure up-bow tone doesn't thin out over the longer line.",
+      "Up-bows naturally have less arm weight, so you may need to add slight pressure to maintain tone.",
+      "This variation ensures you can maintain quality regardless of bow direction over the full range.",
+      "Compare this with No. 7 to understand the differences between down-bow and up-bow emphasis.",
+      "The longer line makes any inconsistency in up-bow tone more apparent.",
     ],
   },
   {
@@ -85,6 +107,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Every note is a full-bow down-bow — lift and reset to the frog between notes, now across a longer scale with more retakes needed per pass.",
       "Keep each retake clean regardless of which string you land on next.",
+      "The longer scale means more retakes, which tests your consistency and stamina.",
+      "Down-bows are naturally stronger, but don't let this make you complacent about tone quality.",
+      "Focus on silent landings and maintaining the same tone from the first retake to the last.",
     ],
   },
   {
@@ -94,6 +119,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Up-bow counterpart to No. 9 — reset to the tip between notes.",
       "This is the harder isolation of the pair; go slower here and check that string crossings don't disturb the retake.",
+      "Up-bows require more active control since you're working against gravity's natural assistance.",
+      "The extended range means you'll be resetting on different strings — plan each landing carefully.",
+      "This exercise develops independence of bow control from natural arm weight.",
     ],
   },
   {
@@ -103,6 +131,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Same up-bow-only technique as No. 10, now grouped into phrases (the commas in the notation mark the breaks).",
       "Plan your retakes so they land at natural points in the phrase rather than mid-idea.",
+      "The longer phrases over two octaves require more advance planning than the one-octave version.",
+      "Use the phrase breaks to release tension and reset your posture.",
+      "This teaches musical phrasing alongside the technical challenge of up-bow retakes.",
     ],
   },
   {
@@ -112,6 +143,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Down-bow counterpart to No. 11 — same phrase-grouping challenge.",
       "Check that your tone stays even across every retake in the phrase, not just the first.",
+      "Down-bows are easier for tone production, so focus on the musical shaping within each phrase.",
+      "The longer phrases allow for more expressive possibilities — explore them.",
+      "Compare this with No. 11 to understand the differences between down-bow and up-bow phrasing.",
     ],
   },
   {
@@ -120,6 +154,10 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     note: "Continues full-bow work across two octaves.",
     guide: [
       "A further full-bow pass over both octaves — use it as a consistency check after the down/up isolation work in Nos. 9–12.",
+      "This should feel easier after the isolated practice — if not, you may need more work on the specific direction.",
+      "Focus on smooth bow changes and consistent tone across the full range.",
+      "Use this as an opportunity to consolidate the skills you developed in the previous exercises.",
+      "Check that your tone quality remains consistent from the lowest notes to the highest.",
     ],
   },
   {
@@ -129,6 +167,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Fast even eighth notes with a small portion of the bow — control comes from the wrist and fingers, not the whole arm.",
       "With twice the scale length, keep an especially close eye on evenness as you cross strings at speed.",
+      "The extended range makes this a significant stamina test for your right hand.",
+      "Keep your motion small and controlled — tension will creep in if you overuse the arm.",
+      "This exercise is excellent preparation for fast passagework in concertos and sonatas.",
     ],
   },
   {
@@ -138,6 +179,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Four quick short strokes lead into a sustained long stroke — down-up-down-up, then a slower resolving stroke.",
       "Don't let the short strokes rush ahead of tempo; the long stroke should feel like a release afterward.",
+      "The longer scale line means more tension can build during the short strokes — stay relaxed.",
+      "This pattern appears frequently in virtuoso repertoire, especially in Romantic-era concertos.",
+      "Focus on making the transition from activity (short strokes) to resolution (long stroke) musical.",
     ],
   },
   {
@@ -146,6 +190,10 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     note: "Paired short strokes resolving to a half stroke, over two octaves.",
     guide: [
       "Two short strokes then a half-length stroke — keep the transition between bow speeds smooth even across a string crossing.",
+      "The half stroke should feel like a natural conclusion to the short-stroke pair.",
+      "With more string crossings, pay extra attention to maintaining consistent contact point.",
+      "This pattern teaches you to transition between different bow speeds smoothly.",
+      "Practice slowly at first to understand the rhythm, then increase tempo gradually.",
     ],
   },
   {
@@ -155,6 +203,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Reverse of No. 16 — a half stroke first, then two matched short strokes.",
       "The half stroke sets your bow position; don't let the short strokes drift off the contact point.",
+      "Starting with a half stroke gives you time to prepare for the faster short strokes.",
+      "Use the half stroke to establish good tone before the quicker section begins.",
+      "This teaches you to transition from slower to faster bowing smoothly over a longer range.",
     ],
   },
   {
@@ -163,6 +214,10 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     note: "Variant grouping of the same pattern, over two octaves.",
     guide: [
       "Same core pattern as No. 16 with a different phrase grouping — read the slur/comma marks carefully before playing.",
+      "Different groupings test your ability to maintain the same technical pattern in various musical contexts.",
+      "The longer range makes the grouping challenges more apparent and demanding.",
+      "Pay attention to how the grouping affects your musical phrasing and breathing.",
+      "This variation ensures you understand the pattern deeply, not just superficially.",
     ],
   },
   {
@@ -171,6 +226,10 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     note: "Repeats the No. 15 pattern with new bow markings, over two octaves.",
     guide: [
       "Same short×4-into-long idea as No. 15 — check the bow direction marks, since this version starts on the opposite bow.",
+      "Starting up-bow changes the feeling — you may need to adjust pressure slightly.",
+      "The longer range makes any inconsistency between bow directions more apparent.",
+      "This ensures you can execute the pattern equally well in both directions.",
+      "Compare this with No. 15 to understand the differences between down-bow and up-bow approaches.",
     ],
   },
   {
@@ -180,6 +239,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Reversed order from No. 15/19 — long stroke first, then four short strokes.",
       "Keep the pulse steady across the transition; don't rush into the short group right after the long note.",
+      "The long stroke sets up the phrase; the short strokes provide energy and forward motion.",
+      "This pattern teaches you to switch from sustained to articulated playing seamlessly.",
+      "The extended range makes the transition more challenging and revealing.",
     ],
   },
   {
@@ -189,6 +251,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Long, then two short, then long again — tests both bow-speed extremes in one phrase.",
       "This pass leans on up-bow strokes for the long notes — keep the tone as full as the down-bow version in No. 22.",
+      "The symmetry creates a satisfying musical shape over the extended range.",
+      "Up-bow long strokes require more active control to maintain tone quality.",
+      "This pattern is common in virtuosic passages where you need both speed and sustained tone.",
     ],
   },
   {
@@ -198,6 +263,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Same shape as No. 21, now with down-bow carrying the long notes.",
       "Use this pair to make the speed changes feel automatic in both bow directions.",
+      "Down-bows are naturally more resonant, so focus on musical shaping rather than just tone production.",
+      "The repetition helps build muscle memory for this important pattern over the full range.",
+      "Compare this with No. 21 to understand how bow direction affects the same musical pattern.",
     ],
   },
   {
@@ -207,6 +275,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Steady alternating down-up full-bow strokes across both octaves — a fluency check after the isolation and grouping work.",
       "By now your tone should be even in both directions; use this to confirm it holds up over the longer line.",
+      "This is a return to simpler bowing after the complex patterns of the previous exercises.",
+      "Use it as a warm-down or to reset your technique before moving to more advanced material.",
+      "Focus on smooth bow changes and consistent tone across the entire two-octave range.",
     ],
   },
   {
@@ -216,6 +287,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Combines the short-group and long-stroke skills from earlier exercises into one flowing two-octave phrase.",
       "Keep the short notes even and the long note fully sustained with no fade at the end.",
+      "This is a culmination of the rhythmic grouping exercises over the extended range.",
+      "The long note at the end should feel like a resolution after the activity of the short notes.",
+      "Practice this at different tempos to ensure control at various speeds across two octaves.",
     ],
   },
   {
@@ -226,6 +300,8 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
       "Staccato dots mean each note stops cleanly on the string before the next starts — not bounced off the string.",
       "Use a small, controlled pinch and a brief stop between notes within the same bow direction.",
       "Extra string crossings here make evenness harder — slow down until each stop feels identical.",
+      "Think of each note as having a tiny space between it and the next — that's the staccato quality.",
+      "The extended range tests your ability to maintain crisp articulation across the instrument.",
     ],
   },
   {
@@ -235,6 +311,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Alternates detached staccato notes with smoothly connected legato notes in the same phrase.",
       "Exaggerate the contrast at first — very crisp staccato, very smooth legato — then even it out.",
+      "The transition between staccato and legato should be clean and deliberate across string crossings.",
+      "This contrast is essential for expressive playing over the full range of the instrument.",
+      "Focus on making the change of articulation feel musical, not just technical.",
     ],
   },
   {
@@ -244,6 +323,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Same staccato articulation as No. 25, now grouped on up-bow strokes.",
       "Up-bow staccato is harder to control — go slower here than on the down-bow version.",
+      "You may need slightly more pressure on up-bows to maintain the same crisp articulation.",
+      "Pay extra attention to keeping the stops even across the extended range.",
+      "This asymmetry between up-bow and down-bow staccato is normal; just be aware of it.",
     ],
   },
   {
@@ -253,6 +335,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Combines the up-bow staccato control from No. 27 with the staccato-to-legato contrast from No. 26.",
       "Focus on a clean transition point where staccato ends and legato begins.",
+      "The up-bow version adds the challenge of maintaining control through the articulation change.",
+      "Think of the legato section as a release from the tension of the staccato.",
+      "This combination is particularly common in orchestral music and concertos.",
     ],
   },
   {
@@ -262,6 +347,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "A straightforward alternating full-bow pass — use it as a relaxed check-in after the staccato work.",
       "Let the arm feel loose again after the more controlled staccato strokes.",
+      "This serves as a palate cleanser between different technical challenges.",
+      "Return to basics: focus on tone, even bow speed, and smooth bow changes.",
+      "If tension built up during staccato work, this exercise helps release it.",
     ],
   },
   {
@@ -271,6 +359,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Continues the alternating full-bow pattern — treat this as a fluency and stamina check over the longer scale.",
       "Watch that tone doesn't drift as you tire through repetition.",
+      "This is about consistency over duration — can you maintain quality through the entire two-octave range?",
+      "Use this to identify any technical issues that emerge when you're no longer fresh.",
+      "If you notice deterioration, stop and address the specific problem before continuing.",
     ],
   },
   {
@@ -280,6 +371,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "The longest grouped phrase in the set — plan bow distribution well ahead so you don't run out of bow partway through.",
       "Break the phrase into smaller mental chunks (by string or by half-octave) if it feels too long to sustain evenly in one go.",
+      "This requires thinking ahead — look at the whole phrase before you start playing.",
+      "The challenge is maintaining both technical control and musical continuity over the extended range.",
+      "Practice this slowly first to understand the bow distribution, then increase tempo.",
     ],
   },
   {
@@ -289,6 +383,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Dotted rhythms mean uneven note lengths — give the long note its full value and keep the short note crisp.",
       "Practice the rhythm alone (clapping or tapping) before adding the bow and the extra string crossings.",
+      "The long note gets three times the value of the short note in a dotted pattern.",
+      "This rhythm creates forward momentum and is common in many musical styles across the extended range.",
+      "Be careful not to rush the short notes — they should be precise, not hurried.",
     ],
   },
   {
@@ -298,6 +395,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "Fast, even short strokes covering both octaves — this is the longest short-bow passage in the set, a real stamina test.",
       "Keep the bow near the string and the motion small; tension tends to creep in over a longer passage like this.",
+      "Alternating directions adds the challenge of maintaining quality through bow changes.",
+      "The bow change should be almost imperceptible — the notes should flow as one continuous stream.",
+      "This is excellent preparation for fast passagework in advanced repertoire.",
     ],
   },
   {
@@ -308,6 +408,8 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
       "Each accented note gets a strong, quick attack at the start of the stroke that then relaxes — check the score for exactly which notes carry the accent, since the pattern varies through this exercise.",
       "Use extra bow speed and a brief pressure release right at the start of the stroke, not throughout.",
       "Keep unaccented notes genuinely unaccented for contrast — over two octaves it's easy to let the accent creep into every note.",
+      "The accent should come from speed and pressure, not from brute force.",
+      "This contrast between accented and unaccented strokes is crucial for dynamic playing across the full range.",
     ],
   },
   {
@@ -317,6 +419,9 @@ export const EXERCISES_2OCTAVE: Exercise[] = [
     guide: [
       "A relaxed closing pattern — use it to cool down and confirm tone consistency across the whole two-octave range.",
       "Play it as a final check: even tone, even bow distribution, no tension in the arm or wrist from top to bottom.",
+      "This should feel like a return to basics after all the technical challenges.",
+      "Use it to assess your overall progress and identify any remaining issues.",
+      "End your practice session with this exercise to leave with a sense of accomplishment and good tone.",
     ],
   },
 ];
